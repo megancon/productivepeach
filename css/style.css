@@ -5,6 +5,7 @@
 }
 
 .garden-body{
+	align-content: center;
 	position: absolute;
 	margin-left: 10%;
 	margin-right:10%;
