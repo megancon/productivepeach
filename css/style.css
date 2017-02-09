@@ -1,3 +1,4 @@
+
 .header h1{
 	font: sans-serif;
 	text-align: center;
@@ -27,15 +28,15 @@
 	position: relative;
 	z-index:100;
 	font-size: 50px;
-	margin-left:48%;
-	margin-top: 20%;
+	margin-left:46%;
+	margin-top: 78.5%;*/
 }
 .ops{
 	/*margin-top: 20%;*/
 	position:absolute;
 	text-align: right;
 	display: inline-block;
-	padding: 5px;
+	padding: 0px;
 }
 
 
