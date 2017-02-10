@@ -3,54 +3,21 @@
 	font: sans-serif;
 	text-align: center;
 }
-
-.garden-body{
-	align-content: center;
-	position: absolute;
-	margin-left: 10%;
-	margin-right:10%;
-}
-.row{
-	display:block;
-	height: 200px;
-	padding:0;
-	margin:0;
-}
-.grass{
-	position:relative;
-	padding:0;
-	margin:0;
-	background: url("../images/grass.png");
-	display: inline-block;
-	height: 100%;
-	width: 200px;
+#test_countdown{
+	font-size: 40px;
 }
 #test_tree{
-	position: relative;
-	z-index:100;
+	position: absolute;
+	z-index: 100;
 	font-size: 50px;
-	margin-left:46%;
-	margin-top: 78.5%;*/
 }
-.ops{
-	/*margin-top: 20%;*/
-	position:absolute;
-	text-align: right;
-	display: inline-block;
-	padding: 0px;
-}
-
-
 #settings{
-	position:relative;
+	position: relative;
 	font-size:60px;
 	color: #a7a0a0;
-	padding-left: 75px;
-	padding-top:120px;
 }
 #friends{
-	position: relative;
-	font-size:60px;
+	align-content: right;
+	font-size:50px;
 	color: #a7a0a0;
-	padding-top: 120px;
 }
