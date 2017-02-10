@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset = "utf-8">
+	<script src="https://use.fontawesome.com/fbe460cb70.js"></script>
+	<link rel = 'stylesheet' href = 'css/style.css'>
+
+	<title>Productive Peach</title>
+</head>
+
+<body>
+	<div class = "header">
+        <h1>Productive Peach</h1>
+	</div>
+	<div>
+		<body background="images/grass.png" id="grass">
+			<div class="countdown" id ="test_countdown"></div>
+			<div>
+<img src="images/tree.png" id="test_tree">
+            </div>
+			<div>
+				<a href = "friends.html" target="_blank" class="fa fa-users" aria-hidden="true" id = "friends"></a>
+			</div>
+			<div>
+				<a href = "settings.html" target = "_blank" class="fa fa-cog" aria-hidden="true" id = "settings"></a>
+			</div>
+		</body>
+	</div>
+        
+<div id = "tree_time">
+	<div id="hours">
+	<label for="hours">Hours</label>
+	<input type="range" min="0" max="12" value="0" step="1" onchange="hourValue(this.value)" />
+	<span id="h">0</span>
+  </div>
+  
+	<div id="mins"> 
+	<label for="minutes">Minutes</label>
+	<input type="range" min="0" max="59" value="0" step="5" onchange="minuteValue(this.value)" align=bottom/>
+	<span id="m">0</span>
+	</div>
+  
+	<button id="submit" onclick="submitTime()">Submit</button>
+</div>
+
+	<script src="productivepeach.js"></script>
+</body>
+</html>
