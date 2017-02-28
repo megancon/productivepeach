@@ -1,0 +1,51 @@
+body{
+  margin: 0px;
+}
+ #header{
+   font-family: gill sans, sans-serif;
+   color: green;
+   font-size: 75px;
+   text-align: center;
+ }
+
+
+#submit{
+  font-family: gill sans, sans-serif;
+  color: green;
+  font-size: 20px;
+  background-color: pink;
+  border-radius: 25px;
+  margin: 7px;
+}
+
+#submit:hover{
+  cursor: hand;
+}
+
+#findfriendsnumber{
+  margin: 100px 0px 25px 0px;
+}
+
+#findfriendsnumber, #findfriendsname {
+  font-family: gill sans, sans-serif;
+  color: green;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+#numberbox, #namebox{
+  border-radius: 10px;
+  border: 4px solid pink;
+  height: 40px;
+  font-size: 15px;
+  font-family: gill sans, sans-serif;
+  background: transparent;
+  text-align: center;
+  color: green;
+}
+
+#numberbox:focus, #namebox:focus{
+  outline: none;
+
+}

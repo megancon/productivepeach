@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,45 +6,78 @@
 	<meta charset = "utf-8">
 	<script src="https://use.fontawesome.com/fbe460cb70.js"></script>
 	<link rel = 'stylesheet' href = 'css/style.css'>
+	<link rel = 'stylesheet' href = 'css/friends.css'>
+	<link rel = 'stylesheet' href = 'css/settings.css'>
 
 	<title>Productive Peach</title>
 </head>
 
 <body>
+<!-- heading -->
 	<div class = "header">
         <h1>Productive Peach</h1>
+        <h2 id = "time">Click on a tree to set a time limit!</h2> 
 	</div>
-	<div>
-		<body background="images/grass.png" id="grass">
-			<div class="countdown" id ="test_countdown"></div>
-			<div>
-<img src="images/tree.png" id="test_tree">
-            </div>
-			<div>
-				<a href = "friends.html" target="_blank" class="fa fa-users" aria-hidden="true" id = "friends"></a>
+	<div id = "garden">
+<!-- settings -->
+		<div id = "settings_btn" class="fa fa-cog" aria-hidden="true"></div>
+		<div id = "settings">
+			<div id = "settings_content">
+				<div id ="header">Add a Tree</div>
+				<div id="addtree">
+					<button id="fb" onclick="addFB()">Facebook</button>
+					<button id="instagram" onclick="addIG()">Instagram</button>
+					<button id="snapchat" onclick="addSC()">Snapchat</button>
+					<button id="twitter" onclick="addT()">Twitter</button>
+					<button id="linkedin" onclick="addLI()">LinkedIn</button>
+				</div>
+				<div id ="header">Remove a Tree</div>
+				<div id="removetree">
+					<button id="fb" onclick="removeFB()">Facebook</button>
+					<button id="instagram" onclick="removeIG()">Instagram</button>
+					<button id="snapchat" onclick="removeSC()">Snapchat</button>
+					<button id="twitter" onclick="removeT()">Twitter</button>
+					<button id="linkedin" onclick="removeLI()">LinkedIn</button>
 			</div>
-			<div>
-				<a href = "settings.html" target = "_blank" class="fa fa-cog" aria-hidden="true" id = "settings"></a>
+		</div>
+<!-- add friends -->
+		<div id = "friends_btn" class="fa fa-users" aria-hidden="true"></div>
+		<div id="friends">
+			<div id = "friends_content">
+			<span class="close2">&times;</span>
+				<div id ="header">Connect with your friends</div>
+				<form id="findfriendsnumber">By Phone Number:<br>
+  					<input id="numberbox" type="text" name="phonenumber" size="35" height="5"><br>
+					<button id="submit" onclick="Submit()">Add</button>
+  				</form>
+				<p><span id='display'></span></p>
+				<form id="findfriendsname">By Name:<br>
+  					<input id="namebox" type="text" name="name" size="35" height="5"><br>
 			</div>
-		</body>
+		</div>
+<!-- tree stuff -->
+		<div class="countdown" id ="test_countdown"></div>
+		<img src="images/tree.png" id="test_tree">
+          
+	<div id = "tree_time">
+		<div id="hours">
+		<label for="hours">Hours</label>
+		<input type="range" min="0" max="12" value="0" step="1" oninput="hourValue(this.value)" onchange="hourValue(this.value)" />
+		<span id="h">0</span>
+	  </div>
+	  
+		<div id="mins"> 
+		<label for="minutes">Minutes</label>
+		<input type="range" min="0" max="59" value="0" step="5" oninput="minuteValue(this.value)" onchange="minuteValue(this.value)" align=bottom/>
+		<span id="m">0</span>
+		</div>
+	  
+		<!-- <button id="submit" onclick="submitTime()">Submit</button> -->
 	</div>
-        
-<div id = "tree_time">
-	<div id="hours">
-	<label for="hours">Hours</label>
-	<input type="range" min="0" max="12" value="0" step="1" onchange="hourValue(this.value)" />
-	<span id="h">0</span>
-  </div>
-  
-	<div id="mins"> 
-	<label for="minutes">Minutes</label>
-	<input type="range" min="0" max="59" value="0" step="5" onchange="minuteValue(this.value)" align=bottom/>
-	<span id="m">0</span>
-	</div>
-  
-	<button id="submit" onclick="submitTime()">Submit</button>
 </div>
 
-	<script src="productivepeach.js"></script>
+	<script src="js/productivepeach.js"></script>
+	<script src="js/friends.js"></script>
+	<script src = js/settings.js></script>
 </body>
 </html>
