@@ -23,7 +23,7 @@ document.getElementById("mins").style.visibility = "hidden";
 document.getElementById("hours").style.visibility = "hidden";
 document.getElementById("submit").style.visibility = "hidden";
 
-document.getElementById("test_tree").onclick =
+document.getElementById("plants").onclick =
 		function(){
  			document.getElementById("mins").style.visibility = "visible";
  			document.getElementById("hours").style.visibility = "visible";
@@ -157,4 +157,7 @@ window.onclick = function(event) {
     }
 }
 
+function Submit(){
+  window.alert("Your friend has been added!");
+}
 

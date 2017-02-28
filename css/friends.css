@@ -1,7 +1,7 @@
 body{
   margin: 0px;
 }
- #header{
+ #friends_header{
    font-family: gill sans, sans-serif;
    color: green;
    font-size: 75px;
@@ -9,7 +9,7 @@ body{
  }
 
 
-#submit{
+#friends_submit{
   font-family: gill sans, sans-serif;
   color: green;
   font-size: 20px;
@@ -18,7 +18,7 @@ body{
   margin: 7px;
 }
 
-#submit:hover{
+#friends_submit:hover{
   cursor: hand;
 }
 
