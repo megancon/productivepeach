@@ -16,11 +16,11 @@
 <!-- heading -->
 	<div class = "header">
         <h1>Productive Peach</h1>
-        <h2 id = "time">Click on a tree to set a time limit!</h2> 
+        <h2 id = "instruction_prompt">Click the plus sign to plant something!</h2> 
 	</div>
 	<div id = "garden">
 <!-- settings -->
-		<div id = "settings_btn" class="fa fa-cog" aria-hidden="true"></div>
+		<div id = "settings_btn" class="fa fa-plus" aria-hidden="true"></div>
 		<div id = "settings">
 			<div id = "settings_content">
 				<span class="close">&times;</span>
@@ -48,33 +48,49 @@
 			<span class="close2">&times;</span>
 				<div id ="friends_header">Connect with your friends</div>
 				<form id="findfriendsnumber">By Phone Number:<br>
-  					<input id="numberbox" type="text" name="phonenumber" size="35" height="5"><br>
-					<button id="friends_submit" onclick="Submit()">Add</button>
+  				<input id="numberbox" type="text" name="phonenumber" size="35" height="5"><br>
+				<button id="friends_submit" onclick="Submit()">Add</button>
   				</form>
-				<p><span id='display'></span></p>
+<!-- 				<p><span id='display'></span></p>
 				<form id="findfriendsname">By Name:<br>
-  				<input id="namebox" type="text" name="name" size="35" height="5"><br>
+  				<input id="namebox" type="text" name="name" size="35" height="5"><br> -->
 			</div>
 		</div>
 <!-- test tree stuff -->
 	<div id = "plants">
-		<div class="countdown" id ="test_countdown"></div>
-		<img src="images/tree.png" id="test_tree">      
-		<div id = "tree_time">
-			<div id="hours">
-			<label for="hours">Hours</label>
-			<input type="range" min="0" max="12" value="0" step="1" oninput="hourValue(this.value)" onchange="hourValue(this.value)" />
-			<span id="h">0</span>
-		  </div>
-	  
-		<div id="mins"> 
-		<label for="minutes">Minutes</label>
-		<input type="range" min="0" max="59" value="0" step="5" oninput="minuteValue(this.value)" onchange="minuteValue(this.value)" align=bottom/>
-		<span id="m">0</span>
+<!-- 		Facebook tree -->
+		<img src="images/tree.png" id="fb_tree"> 
+		<div id = "fb_time_left"></div>
+		<div id = "fb_tree_timer">
+			<div id = "fb_hours">
+				<label for="fb_hours">Hours</label>
+				<input type="range" min="0" max="12" value="0" step="1" oninput="FBhourValue(this.value)" onchange="FBhourValue(this.value)"/>
+				<span id="fb_h">0</span>
+			</div>
+			<div id = "fb_mins">
+				<label for="fb_mins">Minutes</label>
+				<input type="range" min="0" max="59" value="0" step="1" oninput="FBminuteValue(this.value)" onchange="FBminuteValue(this.value)" align=bottom/>
+				<span id="fb_m">0</span>
+			</div>
+			<button id="fb_submit" class = "submit" onclick="FBsubmitTime()">Submit</button>
 		</div>
-	  
-		<button id="submit" onclick="submitTime()">Submit</button>
-	</div>
+<!-- 		Instagram bush -->
+		<img src = "images/insta_bush.png" id = "insta_bush"> 
+		<div id = "ig_time_left"></div>
+		<div id = "ig_bush_timer">
+			<div id = "ig_hours">
+				<label for="ig_hours">Hours</label>
+				<input type="range" min="0" max="12" value="0" step="1" oninput="IGhourValue(this.value)" onchange="IGhourValue(this.value)"/>
+				<span id="ig_h">0</span>
+			</div>
+			<div id = "ig_mins">
+				<label for="ig_mins">Minutes</label>
+				<input type="range" min="0" max="59" value="0" step="1" oninput="IGminuteValue(this.value)" onchange="IGminuteValue(this.value)" align=bottom/>
+				<span id="ig_m">0</span>
+			</div>
+			<button id="ig_submit" class = "submit" onclick="IGsubmitTime()">Submit</button>
+		</div>
+	</div>    
 
 	<script src="js/productivepeach.js"></script>
 </body>
