@@ -1,20 +1,21 @@
 #settings_header{
   font-family: gill sans, sans-serif;
-  color: green;
+  color: #952A8A;
   font-size: 55px;
   text-align: left;
   margin: 15px 15px;
 }
 
-#fb, #linkedin, #twitter, #snapchat, #instagram{
+#fb, #linkedin, #twitter, #youtube, #instagram{
   font-family: gill sans, sans-serif;
-  color: green;
+  color: white;
   font-size: 20px;
-  background-color: pink;
+  background-color: #952A8A;
   border-radius: 25px;
   margin: 15px;
   position: relative;
   align-items: center;
+  cursor: pointer;
 }
 
 #addtree {

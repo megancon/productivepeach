@@ -15,7 +15,7 @@
 <body>
 <!-- heading -->
 	<div class = "header">
-        <h1>Productive Peach</h1>
+        <img src = "images/ProductivePeach.png" id = "logo">
         <h2 id = "instruction_prompt">Click the plus sign to plant something!</h2> 
 	</div>
 	<div id = "garden">
@@ -28,16 +28,16 @@
 				<div id="addtree">
 					<button id="fb" onclick="addFB()">Facebook</button>
 					<button id="instagram" onclick="addIG()">Instagram</button>
-					<button id="snapchat" onclick="addSC()">Snapchat</button>
-					<button id="twitter" onclick="addT()">Twitter</button>
+					<button id="twitter" onclick="addTW()">Twitter</button>
+					<button id="youtube" onclick="addYT()">Youtube</button>
 					<button id="linkedin" onclick="addLI()">LinkedIn</button>
 				</div>
 			<div id ="settings_header">Remove a Plant</div>
 			<div id="removetree">
 				<button id="fb" onclick="removeFB()">Facebook</button>
 				<button id="instagram" onclick="removeIG()">Instagram</button>
-				<button id="snapchat" onclick="removeSC()">Snapchat</button>
-				<button id="twitter" onclick="removeT()">Twitter</button>
+				<button id="twitter" onclick="removeTW()">Twitter</button>
+				<button id="youtube" onclick="removeYT()">Youtube</button>
 				<button id="linkedin" onclick="removeLI()">LinkedIn</button>
 			</div>
 		</div>
@@ -51,9 +51,6 @@
   				<input id="numberbox" type="text" name="phonenumber" size="35" height="5"><br>
 				<button id="friends_submit" onclick="Submit()">Add</button>
   				</form>
-<!-- 				<p><span id='display'></span></p>
-				<form id="findfriendsname">By Name:<br>
-  				<input id="namebox" type="text" name="name" size="35" height="5"><br> -->
 			</div>
 		</div>
 <!-- test tree stuff -->
@@ -90,7 +87,56 @@
 			</div>
 			<button id="ig_submit" class = "submit" onclick="IGsubmitTime()">Submit</button>
 		</div>
-	</div>    
+<!-- 		Twitter tree -->
+		<img src="images/twitter_tree.png" id="tw_tree">
+		<div id = "tw_time_left"></div>
+		<div id = "tw_tree_timer">
+			<div id = "tw_hours">
+				<label for="tw_hours">Hours</label>
+				<input type="range" min="0" max="12" value="0" step="1" oninput="TWhourValue(this.value)" onchange="TWhourValue(this.value)"/>
+				<span id="tw_h">0</span>
+			</div>
+			<div id = "tw_mins">
+				<label for="tw_mins">Minutes</label>
+				<input type="range" min="0" max="59" value="0" step="1" oninput="TWminuteValue(this.value)" onchange="TWminuteValue(this.value)" align=bottom/>
+				<span id="tw_m">0</span>
+			</div>
+			<button id="tw_submit" class = "submit" onclick="TWsubmitTime()">Submit</button>
+		</div>
+	</div>  
+<!-- 		Youtube plant -->
+		<img src="images/youtube_flower.png" id="yt_plant"> 
+		<div id = "yt_time_left"></div>
+		<div id = "yt_plant_timer">
+			<div id = "yt_hours">
+				<label for="yt_hours">Hours</label>
+				<input type="range" min="0" max="12" value="0" step="1" oninput="YThourValue(this.value)" onchange="YThourValue(this.value)"/>
+				<span id="yt_h">0</span>
+			</div>
+			<div id = "yt_mins">
+				<label for="yt_mins">Minutes</label>
+				<input type="range" min="0" max="59" value="0" step="1" oninput="YTminuteValue(this.value)" onchange="YTminuteValue(this.value)" align=bottom/>
+				<span id="yt_m">0</span>
+			</div>
+			<button id="yt_submit" class = "submit" onclick="YTsubmitTime()">Submit</button>
+		</div>  
+<!-- 		Linkedin plant -->
+		<img src="images/linkedin_plant.png" id="li_plant">
+		<div id = "li_time_left"></div>
+		<div id = "li_plant_timer">
+			<div id = "li_hours">
+				<label for="li_hours">Hours</label>
+				<input type="range" min="0" max="12" value="0" step="1" oninput="LIhourValue(this.value)" onchange="LIhourValue(this.value)"/>
+				<span id="li_h">0</span>
+			</div>
+			<div id = "li_mins">
+				<label for="li_mins">Minutes</label>
+				<input type="range" min="0" max="59" value="0" step="1" oninput="LIminuteValue(this.value)" onchange="LIminuteValue(this.value)" align=bottom/>
+				<span id="li_m">0</span>
+			</div>
+			<button id="li_submit" class = "submit" onclick="LIsubmitTime()">Submit</button>
+		</div>
+	</div>   
 
 	<script src="js/productivepeach.js"></script>
 </body>

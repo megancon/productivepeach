@@ -21,23 +21,16 @@ function FBminuteValue(newValue)
 
 
 function FBsubmitTime(){
-	fb_finalTime= (3600000*fb_hours) + (60000*fb_minutes); 
-  
-}
-
-document.getElementById("fb_submit").onclick =
-		function(){
+	FB_timer.style.display = "none";
 
 			if (fb_timeLeft == 0){
 				fb_curr_hours = fb_h_input.innerHTML;
 				fb_curr_minutes = fb_m_input.innerHTML;
 
- 				fb_finalTime= 
- 						(3600000*fb_curr_hours) + (60000*fb_curr_minutes);
+ 				 fb_finalTime= 
+ 				 		(3600000*fb_curr_hours) + (60000*fb_curr_minutes);
 
- 			FB_timer.style.display = "none";
-
- 			var countDownTrgt = new Date().getTime() + fb_finalTime/* + user input time in milliseconds*/;
+ 			var countDownTrgt = new Date().getTime() + fb_finalTime;
 			var x = setInterval(function()
 			{
 				var now = new Date().getTime();
@@ -60,11 +53,8 @@ document.getElementById("fb_submit").onclick =
 				}
 			}, 1000);
 		}
-
- 	};
-
-
-
+  
+}
 
 // Insta bush code
 var IG_bush = document.getElementById('insta_bush');
@@ -89,19 +79,13 @@ function IGminuteValue(newValue)
 
 
 function IGsubmitTime(){
-	ig_finalTime= (3600000*ig_hours) + (60000*ig_minutes); 
-  
-}
-
-document.getElementById("ig_submit").onclick =
-		function(){
 
 			if (ig_timeLeft == 0){
 				ig_curr_hours = ig_h_input.innerHTML;
-				ig_curr_minutes = ig_m_input.innerHTML;
+				ig_curr_mins = ig_m_input.innerHTML;
 
  				ig_finalTime= 
- 						(3600000*ig_curr_hours) + (60000*ig_curr_minutes);
+ 						(3600000*ig_curr_hours) + (60000*ig_curr_mins);
 
  			IG_timer.style.display = "none";
 
@@ -110,6 +94,7 @@ document.getElementById("ig_submit").onclick =
 			{
 				var now = new Date().getTime();
 				ig_timeLeft = countDownTrgt - now;
+				console.log("ig_timeLeft", ig_timeLeft);
 				var hours = Math.floor((ig_timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 				var minutes = Math.floor((ig_timeLeft % (1000 * 60 * 60)) / (1000 * 60));
 
@@ -128,17 +113,205 @@ document.getElementById("ig_submit").onclick =
 				}
 			}, 1000);
 		}
+  
+}
+
+
+// TWITTER tree code
+var TW_tree = document.getElementById('tw_tree');
+var TW_timer = document.getElementById('tw_tree_timer');
+var tw_m_input = document.getElementById('tw_m');
+var tw_h_input = document.getElementById('tw_h');
+var tw_finalTime, tw_curr_hours, tw_curr_mins;
+var tw_timeLeft = 0;
+var tw_display_time = document.getElementById('tw_time_left');
+TW_tree.onclick = 
+	function () {
+		TW_timer.style.display = "block";
+	};
+
+function TWhourValue(newValue)
+{	tw_h_input.innerHTML=newValue;
+}
+
+function TWminuteValue(newValue)
+{	tw_m_input.innerHTML=newValue;
+}
+
+
+function TWsubmitTime(){
+
+		if (tw_timeLeft == 0){
+			tw_curr_hours = tw_h_input.innerHTML;
+			tw_curr_mins = tw_m_input.innerHTML;
+
+ 			tw_finalTime= 
+ 					(3600000*tw_curr_hours) + (60000*tw_curr_mins);
+
+ 			TW_timer.style.display = "none";
+
+ 			var countDownTrgt = new Date().getTime() + tw_finalTime/* + user input time in milliseconds*/;
+			var x = setInterval(function()
+			{
+				var now = new Date().getTime();
+				tw_timeLeft = countDownTrgt - now;
+				var hours = Math.floor((tw_timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((tw_timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+
+				if ((hours != 0 && minutes != 0) || (hours != 0 && minutes == 0)) 
+				{
+					tw_display_time.innerHTML = hours + "h " + minutes + "m";
+				}
+				else if (hours == 0 && minutes != 0)
+				{
+					tw_display_time.innerHTML = minutes + "m";
+				}
+				if (tw_timeLeft < 0)
+				{
+					clearInterval(x);
+					tw_display_time.innerHTML = "";
+				}
+			}, 1000);
+		}
+  
+}
+
+// YOUTUBE plant code
+var YT_plant = document.getElementById('yt_plant');
+var YT_timer = document.getElementById('yt_plant_timer');
+var yt_m_input = document.getElementById('yt_m');
+var yt_h_input = document.getElementById('yt_h');
+var yt_finalTime, yt_curr_hours, yt_curr_mins;
+var yt_timeLeft = 0;
+var yt_display_time = document.getElementById('yt_time_left');
+YT_plant.onclick = 
+	function () {
+		YT_timer.style.display = "block";
+	};
+
+function YThourValue(newValue)
+{	yt_h_input.innerHTML=newValue;
+}
+
+function YTminuteValue(newValue)
+{	yt_m_input.innerHTML=newValue;
+}
+
+
+function YTsubmitTime(){
+
+	if (yt_timeLeft == 0){
+		yt_curr_hours = yt_h_input.innerHTML;
+		yt_curr_mins = yt_m_input.innerHTML;
+
+ 		yt_finalTime= (3600000*yt_curr_hours) + (60000*yt_curr_mins);
+
+ 		YT_timer.style.display = "none";
+
+ 		var countDownTrgt = new Date().getTime() + yt_finalTime/* + user input time in milliseconds*/;
+		var x = setInterval(function()
+		{
+			var now = new Date().getTime();
+			yt_timeLeft = countDownTrgt - now;
+			var hours = Math.floor((yt_timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((yt_timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+
+			if ((hours != 0 && minutes != 0) || (hours != 0 && minutes == 0)) 
+			{
+				yt_display_time.innerHTML = hours + "h " + minutes + "m";
+			}
+			else if (hours == 0 && minutes != 0)
+			{
+				yt_display_time.innerHTML = minutes + "m";
+			}
+			if (yt_timeLeft < 0)
+			{
+				clearInterval(x);
+				yt_display_time.innerHTML = "";
+			}
+		}, 1000);
+		}
+
+ 	}; 
+
+
+// LINKEDIN tree code
+var LI_plant = document.getElementById('li_plant');
+var LI_timer = document.getElementById('li_plant_timer');
+var li_m_input = document.getElementById('li_m');
+var li_h_input = document.getElementById('li_h');
+var li_finalTime, li_curr_hours, li_curr_mins;
+var li_timeLeft = 0;
+var li_display_time = document.getElementById('li_time_left');
+LI_plant.onclick = 
+	function () {
+		LI_timer.style.display = "block";
+	};
+
+function LIhourValue(newValue)
+{	li_h_input.innerHTML=newValue;
+}
+
+function LIminuteValue(newValue)
+{	li_m_input.innerHTML=newValue;
+}
+
+
+function LIsubmitTime(){
+	li_finalTime= (3600000*li_curr_hours) + (60000*li_curr_minutes); 
+  
+}
+
+document.getElementById("li_submit").onclick =
+		function(){
+
+			if (li_timeLeft == 0){
+				li_curr_hours = li_h_input.innerHTML;
+				li_curr_mins = li_m_input.innerHTML;
+
+ 				li_finalTime= 
+ 						(3600000*li_curr_hours) + (60000*li_curr_mins);
+
+ 			LI_timer.style.display = "none";
+
+ 			var countDownTrgt = new Date().getTime() + li_finalTime/* + user input time in milliseconds*/;
+			var x = setInterval(function()
+			{
+				var now = new Date().getTime();
+				li_timeLeft = countDownTrgt - now;
+				var hours = Math.floor((li_timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((li_timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+
+				if ((hours != 0 && minutes != 0) || (hours != 0 && minutes == 0)) 
+				{
+					li_display_time.innerHTML = hours + "h " + minutes + "m";
+				}
+				else if (hours == 0 && minutes != 0)
+				{
+					li_display_time.innerHTML = minutes + "m";
+				}
+				if (li_timeLeft < 0)
+				{
+					clearInterval(x);
+					li_display_time.innerHTML = "";
+				}
+			}, 1000);
+		}
 
  	};
 
-//settings modal box
+
+
+//plus sign modal box
 var modal = document.getElementById('settings_content')
 var btn = document.getElementById("settings_btn");
 var span = document.getElementsByClassName("close")[0];
+var instruction_prompt = document.getElementById("instruction_prompt");
 
 
 btn.onclick = function() {
     modal.style.display = "block";
+    instruction_prompt.style.display = "none";
 }
 
 span.onclick = function() {
@@ -152,59 +325,66 @@ window.onclick = function(event) {
 }
 
 function addFB(){
-  	window.alert("Your Facebook tree has been added!");
+  	window.alert("Your Facebook plant has been added!");
   	FB_tree.style.display = "block";
-  	// FB_tree.onclick =
-  	// 	function() {
-  	// 		document.getElementById("mins").style.visibility = "visible";
- 		// 	document.getElementById("hours").style.visibility = "visible";
- 		// 	document.getElementById("submit").style.visibility = "visible";
-   //          document.getElementById("tree_time").style.paddingLeft = "50%";
-  	// 	};
+  	instruction_prompt.style.display = "block";
+  	instruction_prompt.innerHTML = "Click on a plant to set a time limit!";
 }
 
 function addIG(){
-	window.alert("Your Instagram tree has been added!");
+	window.alert("Your Instagram plant has been added!");
 	IG_bush.style.display = "block";
-	// IG_bush.onclick = 
-	// 	function (){
-	// 		document.getElementById("mins").style.visibility = "visible";
- // 			document.getElementById("hours").style.visibility = "visible";
- // 			document.getElementById("submit").style.visibility = "visible";
- //            document.getElementById("tree_time").style.paddingLeft = "50%";
-	// 	};
-}
-
-function addSC(){
-  	window.alert("Your Scapchat tree has been added!");
+  	document.getElementById("instruction_prompt").innerHTML = "Click on a plant to set a time limit!";
 }
 
 function addLI(){
-  	window.alert("Your LinkedIn tree has been added!");
+  	window.alert("Your LinkedIn plant has been added!");
+  	LI_plant.style.display = "block";
+  	document.getElementById("instruction_prompt").innerHTML = "Click on a plant to set a time limit!";
 }
 
-function addT(){
-  	window.alert("Your Twitter tree has been added!");
+function addTW(){
+  	window.alert("Your Youtube plant has been added!");
+  	TW_tree.style.display = "block";
+  	instruction_prompt.style.display = "block";
+  	instruction_prompt.innerHTML = "Click on a plant to set a time limit!";
+}
+
+function addYT(){
+  	window.alert("Your Youtube plant has been added!");
+  	YT_plant.style.display = "block";
+  	instruction_prompt.style.display = "block";
+  	instruction_prompt.innerHTML = "Click on a plant to set a time limit!";
 }
 
 function removeFB(){
-  	window.alert("Your Facebook tree has been removed!");
-}
-
-function removeSC(){
-  window.alert("Your Scapchat tree has been removed!");
-}
-
-function removeT(){
-  window.alert("Your Twitter tree has been removed!");
+  	window.alert("Your Facebook plant has been removed!");
+ 	FB_tree.style.display = "none";
+ 	fb_display_time.style.display = "none";
 }
 
 function removeIG(){
-  window.alert("Your Instagram tree has been removed!");
+	window.alert("Your Instagram plant has been removed!");
+	IG_bush.style.display = "none";
+ 	ig_display_time.style.display = "none";
+}
+
+function removeTW(){
+  	window.alert("Your Twitter plant has been removed!");
+  	TW_tree.style.display = "none";
+ 	tw_display_time.style.display = "none";
+}
+
+function removeYT(){
+  	window.alert("Your Youtube plant has been removed!");
+  	YT_plant.style.display = "none";
+ 	yt_display_time.style.display = "none";
 }
 
 function removeLI(){
-  window.alert("Your Linkedin tree has been removed!");
+  	window.alert("Your Linkedin plant has been removed!");
+  	LI_plant.style.display = "none";
+ 	li_display_time.style.display = "none";
 }
 
 //friends modal box
@@ -230,4 +410,3 @@ window.onclick = function(event) {
 function Submit(){
   window.alert("Your friend has been added!");
 }
-
